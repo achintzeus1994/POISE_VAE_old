@@ -1,0 +1,62 @@
+digraph {
+	graph [size="12,12"]
+	node [align=left fontname=monospace fontsize=10 height=0.2 ranksep=0.1 shape=box style=filled]
+	139828546868800 [label="
+ ()" fillcolor=darkolivegreen1]
+	139833348561264 [label="SumBackward0
+---------------------
+self_sizes: (1, 2, 2)"]
+	139833348561888 -> 139833348561264
+	139833348561888 [label="SubBackward0
+------------
+alpha: 1"]
+	139833348561360 -> 139833348561888
+	139833348561360 -> 139828546873600 [dir=none]
+	139828546873600 [label="self
+ (1, 2, 2)" fillcolor=orange]
+	139833348561360 [label="MulBackward0
+---------------------
+other:           None
+self : [saved tensor]"]
+	139833348561168 -> 139833348561360
+	139833348561168 [label="CatBackward
+-----------
+dim: 1"]
+	139833348561936 -> 139833348561168
+	139833348561936 [label="CatBackward
+-----------
+dim: 0"]
+	139828547345664 -> 139833348561936
+	139828534451712 [label="g11
+ (1, 1)" fillcolor=lightblue]
+	139828534451712 -> 139828547345664
+	139828547345664 [label=AccumulateGrad]
+	139833348561840 -> 139833348561168
+	139833348561840 [label="CatBackward
+-----------
+dim: 0"]
+	139833348561984 -> 139833348561840
+	139833348561984 [label=NegBackward]
+	139833348562176 -> 139833348561984
+	139833348562176 -> 139828534266368 [dir=none]
+	139828534266368 [label="result
+ (1, 1)" fillcolor=orange]
+	139833348562176 [label="ExpBackward
+----------------------
+result: [saved tensor]"]
+	139828534604080 -> 139833348562176
+	139828534449920 [label="g22
+ (1, 1)" fillcolor=lightblue]
+	139828534449920 -> 139828534604080
+	139828534604080 [label=AccumulateGrad]
+	139833348561648 -> 139833348561888
+	139833348561648 -> 139828534266048 [dir=none]
+	139828534266048 [label="self
+ (1, 2, 2)" fillcolor=orange]
+	139833348561648 [label="MulBackward0
+---------------------
+other:           None
+self : [saved tensor]"]
+	139833348561168 -> 139833348561648
+	139833348561264 -> 139828546868800
+}
